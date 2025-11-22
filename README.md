@@ -174,7 +174,7 @@ main(config)
 The example below shows how to configure advanced coordination settings for better performance. The framework implements two-stage training with belief formation and BNE coordination.
 
 ```python
-from src.learners.q_learner import QLearner
+from src.learners.q_learner import ECONLearner
 from src.controllers.basic_mac import LLMBasicMAC
 
 # Configure BNE coordination parameters
@@ -183,7 +183,7 @@ config.bne_convergence_threshold = 0.01
 config.stage2_weight = 0.3
 
 # Initialize learner with coordination
-learner = QLearner(mac, scheme, logger, config)
+learner = ECONLearner(mac, scheme, logger, config)
 learner.train(batch, t_env, episode_num)
 ```
 
